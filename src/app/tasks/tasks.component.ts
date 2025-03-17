@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from "./task/task.component";
 import { NewTaskComponent } from './new-task/new-task.component';
+import { NEW_TASK } from './new-task/new-task.model';
+import { CardComponent } from "../shared/card/card.component";
 
 @Component({
   selector: 'app-tasks',
@@ -56,6 +58,19 @@ export class TasksComponent {
 
   onNewTaskClick() {
     this.isNewTaskClicked = true;
+  }
+
+  onCancelTask() {
+    this.isNewTaskClicked = false;
+  }
+
+  onAddNewTask(task: NEW_TASK) {
+    this.tasks.push({
+      ...task,
+      userId: this.userId,
+      id: Math.random().toString()
+    });
+    this.isNewTaskClicked = false;
   }
 
 }
