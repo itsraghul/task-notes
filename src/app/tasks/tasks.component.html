@@ -2,10 +2,7 @@
 <app-new-task (close)="onCancelTask()" [userId]="userId"></app-new-task>
 }
 
-<section
-  id="tasks"
-  [attr.data-velt-target-inline-comment-element-id]="'container-id'"
->
+<section id="tasks" [attr.target-element-id]="userId + 'container-id'">
   <header>
     <h2>{{ name }}'s Tasks</h2>
     <menu>
@@ -20,7 +17,7 @@
     }
   </ul>
   <velt-inline-comments-section
-    target-comment-element-id="container-id"
+    [attr.target-element-id]="userId + 'container-id'"
     shadow-dom="false"
     dialog-variant="dialog-variant"
     variant="inline-section-variant"
