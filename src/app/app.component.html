@@ -1,4 +1,8 @@
 <app-header />
+<div class="chat-bar">
+  <velt-huddle-tool type="all"></velt-huddle-tool>
+  <velt-sidebar-button></velt-sidebar-button>
+</div>
 <main>
   <ul id="users">
     @for (user of users; track user.id) {
@@ -18,3 +22,5 @@
   <p id="fallback">Select a user to see the tasks</p>
   }
 </main>
+<velt-comments-sidebar page-mode="true"></velt-comments-sidebar>
+<!-- <velt-presence></velt-presence> -->
